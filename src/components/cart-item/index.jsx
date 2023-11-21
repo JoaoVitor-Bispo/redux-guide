@@ -2,14 +2,17 @@ import { AiOutlinePlus, AiOutlineMinus, AiOutlineClose } from "react-icons/ai";
 
 // Styles
 import * as Styles from "./styles";
+import { useDispatch } from "react-redux";
+import { minusProductQuantity, plusProductQuantity, removeProductFromCart } from "../../redux/cart/actions";
 
 const CartItem = ({ product }) => {
+  const dispatch = useDispatch()
 
-  const handleRemoveClick = () => {};
+  const handleRemoveClick = () => dispatch(removeProductFromCart(product));
 
-  const handleIncreaseClick = () => {};
+  const handleIncreaseClick = () => dispatch(plusProductQuantity(product));
 
-  const handleDecreaseClick = () => {};
+  const handleDecreaseClick = () => dispatch(minusProductQuantity(product));
 
 
   return (
