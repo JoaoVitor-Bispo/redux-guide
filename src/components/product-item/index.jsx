@@ -8,6 +8,7 @@ import * as Styles from "./styles";
 import { useDispatch, useSelector } from "react-redux";
 import { useEffect } from "react";
 import { addProductToCart } from "../../redux/cart/actions";
+import { addProduct } from "../../redux/cart/slice";
 
 // Utilities
 
@@ -15,7 +16,7 @@ import { addProductToCart } from "../../redux/cart/actions";
 const ProductItem = ({ product }) => {
   const dispatch = useDispatch()
 
-  const handleClickProduct = () => dispatch(addProductToCart(product));
+  const handleClickProduct = () => dispatch(addProduct(product));
 
 
   return (
